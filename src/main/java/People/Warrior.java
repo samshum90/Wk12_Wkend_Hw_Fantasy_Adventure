@@ -29,8 +29,14 @@ public abstract class Warrior extends Player{
         return this.secondary.getDamage();
     }
 
-    public int doubleAttack() {
-        return  attack() + getSecondayDamage();
+    public int attack(){
+        int total = 0;
+        if(this.getWeapon() != null){
+            total += this.getWeapon().getDamage();
+        }
+        if(this.secondary != null){
+            total += this.secondary.getDamage();
+        }
+        return total;
     }
-
 }

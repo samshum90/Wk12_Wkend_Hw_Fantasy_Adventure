@@ -97,9 +97,9 @@ public class KnightTest {
     }
 
     @Test
-    public void canDoubleAttack(){
+    public void canDuelAttack(){
         player1.equipWeapon(sword);
         player1.equipSecondary(club);
-        assertEquals(50, player1.doubleAttack());
+        assertEquals(50, player1.attack());
     }
 }

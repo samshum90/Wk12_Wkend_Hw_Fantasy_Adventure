@@ -1,8 +1,8 @@
 package People;
 
-import Equipment.Club;
 import Equipment.IWeapon;
 import Item.ICarry;
+import Skills.IHeal;
 
 import java.util.ArrayList;
 
@@ -65,5 +65,10 @@ public abstract class Player {
         return this.weapon.getDamage();
     }
 
+    public void takeDamage(int i) {
+        int currentHp = this.hp;
+        int finalHp = currentHp - i;
+        this.hp = finalHp;
+    }
 }
 

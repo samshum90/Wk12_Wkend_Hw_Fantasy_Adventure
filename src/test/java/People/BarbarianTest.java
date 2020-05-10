@@ -98,9 +98,16 @@ public class BarbarianTest {
     }
 
     @Test
-    public void canDoubleAttack(){
+    public void canDuelAttack(){
         player1.equipWeapon(sword);
         player1.equipSecondary(club);
-        assertEquals(50, player1.doubleAttack());
+        assertEquals(50, player1.attack());
     }
+
+    @Test
+    public void canTakeDamage(){
+        player1.takeDamage( 20);
+        assertEquals( 50, player1.getHp());
+    }
+
 }
