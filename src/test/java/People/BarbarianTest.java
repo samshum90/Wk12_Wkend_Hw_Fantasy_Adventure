@@ -110,4 +110,10 @@ public class BarbarianTest {
         assertEquals( 50, player1.getHp());
     }
 
+    @Test
+    public void canGetClass(){
+        String result = String.format("%s",player1.getClass());
+        assertEquals( "Barbarian", result.substring(13));
+    }
+
 }

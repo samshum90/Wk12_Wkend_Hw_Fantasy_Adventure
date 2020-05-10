@@ -3,7 +3,7 @@ import Enemy.Hard.Orc;
 import Equipment.Club;
 import Equipment.Staff;
 import Group.Room;
-import People.Wizard;
+import People.*;
 import Skills.Blizzard;
 import Skills.FireBall;
 import org.junit.Before;
@@ -22,10 +22,24 @@ public class QuestTest {
     Blizzard blizzard;
     Club club;
     Quest quest;
+    Barbarian player8;
+    Dwarf player2;
+    Knight player3;
+    Wizard player4;
+    Warlock player5;
+    Necromancer player6;
+    Cleric player7;
 
     @Before
     public void before(){
         player1 = new Wizard( "Holdolf the Hazy", 40, 40, 15, 20);
+        player8 =  new Barbarian( "Grom", 70, 10, 20);
+        player2 =  new Dwarf( "Grom", 70, 10, 20);
+        player3 =  new Knight( "Grom", 70, 10, 20);
+        player4 =  new Wizard( "Grom", 70, 10, 20, 20);
+        player5 =  new Warlock( "Grom", 70, 10, 20, 20);
+        player6 =  new Necromancer( "Grom", 70, 10, 20, 20);
+        player7 =  new Cleric( "Grom", 70, 10, 20, 20);
         staff = new Staff( 5, 4);
         owl = new Owl( 5, 5 );
         fireBall = new FireBall( 20, 2);
@@ -103,6 +117,19 @@ public class QuestTest {
     public void canPreQuest(){
             quest.prepareQuest(1);
         assertEquals( 1, quest.getRoomCount());
+    }
+
+    @Test
+    public void partyCanRespond(){
+        quest.addPlayer(player1);
+        quest.addPlayer(player3);
+        quest.addPlayer(player2);
+        quest.addPlayer(player4);
+        quest.addPlayer(player5);
+        quest.addPlayer(player6);
+        quest.addPlayer(player7);
+        quest.partyOptions();
+        assertEquals(7, quest.getPartyCount());
     }
 
 }

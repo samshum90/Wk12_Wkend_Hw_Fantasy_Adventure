@@ -16,12 +16,14 @@ public class Room {
     private int Treasure;
     private Enemy enemy;
     private ArrayList<Enemy> enemies;
+    private boolean complete;
 
 
     public Room(int roomNum, int treasure) {
         this.roomNum = roomNum;
         this.Treasure = treasure;
         this.enemies = new ArrayList<Enemy>();
+        this.complete = false;
     }
 
     public int getRoomNum() {
@@ -35,6 +37,16 @@ public class Room {
     public int getEnemiesCount() {
         return enemies.size();
     }
+
+    public boolean getComplete() {
+        return complete;
+    }
+
+    public void completed() {
+        this.complete = true;
+    }
+
+
 
     public void addEnemy(Enemy enemy) {
         this.enemies.add(enemy);
@@ -66,5 +78,19 @@ public class Room {
             }
         }
     }
+
+    public String showEnemyInfo(int i) {
+        return this.enemies.get(i).enemyInfo();
+    }
+
+    public void enemyInfo(Room room) {
+        String starterRoomOutput = String.format("Room %s has %s Enemies:", getRoomNum(), getEnemiesCount());
+        System.out.println(starterRoomOutput);
+
+        for (int i = 0; i < getEnemiesCount(); i++) {
+            System.out.println(String.format( "%s. %s",i, showEnemyInfo(i)));
+        }
+    }
+
 
 }

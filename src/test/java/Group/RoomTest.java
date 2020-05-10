@@ -54,6 +54,16 @@ public class RoomTest {
     }
 
     @Test
+    public void canGetComplete(){
+        assertEquals( false, room.getComplete());
+    }
+    @Test
+    public void canComplete(){
+        room.completed();
+        assertEquals( true, room.getComplete());
+    }
+
+    @Test
     public void canAddEnemy(){
         room.addEnemy(orc);
         assertEquals( 1, room.getEnemiesCount());
@@ -69,6 +79,19 @@ public class RoomTest {
     @Test
     public void canGenerateEnemies(){
         room.generateEasyEnemy( 1 );
+        assertEquals( 6, room.getEnemiesCount());
+    }
+
+    @Test
+    public void canGetEnemyInfo(){
+        room.addEnemy(orc);
+        assertEquals("Orc HP:30 Damage:30 Gold:10", room.showEnemyInfo(0) );
+    }
+
+    @Test
+    public void canGenerateEnemyinfo(){
+        room.generateEasyEnemy( 1 );
+        room.enemyInfo(room);
         assertEquals( 6, room.getEnemiesCount());
     }
 

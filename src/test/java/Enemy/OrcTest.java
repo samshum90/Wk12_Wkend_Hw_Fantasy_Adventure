@@ -53,4 +53,8 @@ public class OrcTest {
         assertEquals( 10, orc.attack());
     }
 
+    @Test
+    public void canGetInfo(){
+        assertEquals( "Orc HP:30 Damage:30 Gold:10", orc.enemyInfo());
+    }
 }

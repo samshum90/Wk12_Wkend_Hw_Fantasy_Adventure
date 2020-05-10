@@ -56,9 +56,10 @@ public class Runner {
         System.out.println("How many rooms would you like to play?");
         String numOfRoom = scanner.next();
         int roomNumber = parseInt(numOfRoom);
+
         quest.prepareQuest(roomNumber);
 
-
+//        quest.startQuest();
 
 
 

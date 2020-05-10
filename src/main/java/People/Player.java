@@ -70,5 +70,6 @@ public abstract class Player {
         int finalHp = currentHp - i;
         this.hp = finalHp;
     }
+
 }
 

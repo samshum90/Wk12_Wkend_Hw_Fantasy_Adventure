@@ -39,4 +39,8 @@ public abstract class Enemy{
         int finalHp = currentHp - i;
         this.hp = finalHp;
     }
+
+    public String enemyInfo() {
+        return String.format( "%s HP:%s Damage:%s Gold:%s", this.type, this.hp, this.damage, this.wallet );
+    }
 }
