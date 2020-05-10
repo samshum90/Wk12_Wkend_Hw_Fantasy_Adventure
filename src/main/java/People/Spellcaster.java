@@ -7,23 +7,17 @@ import Skills.ICast;
 public abstract class Spellcaster extends Player {
 
     private int mp;
-    private Creature creature;
-    private ICast spell;
+
+    public ICast spell;
 
     public Spellcaster(String name, int hp, int mp, int wallet, int carryCapacity) {
         super(name, hp, wallet, carryCapacity);
         this.mp = mp;
-        this.creature = null;
         this.spell = null;
     }
 
     public int getMp() {
         return mp;
-    }
-
-
-    public Creature getCreature(){
-        return this.creature;
     }
 
     public ICast getSpell(){
@@ -48,9 +42,7 @@ public abstract class Spellcaster extends Player {
         if(this.getSpell() != null){
             total += this.spell.cast();
         }
-        if(this.creature != null){
-            total += this.creature.getDamage();
-        }
+
         return total;
     }
 
@@ -64,25 +56,5 @@ public abstract class Spellcaster extends Player {
         reduceMp();
         return cast();
     }
-
-    public void summon(Creature creature){
-        this.creature = creature;
-    };
-
-    public void unsummon(){
-        this.creature = null;
-    };
-
-    public int attack(){
-        int total = 0;
-        if(this.getWeapon() != null){
-            total += this.getWeapon().getDamage();
-        }
-        if(this.creature != null){
-            total += this.creature.getDamage();
-        }
-        return total;
-    }
-
 
 }

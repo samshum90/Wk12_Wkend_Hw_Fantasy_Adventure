@@ -1,6 +1,6 @@
 package People;
 
-import Equipment.Rod;
+import Equipment.Tool.Rod;
 import Equipment.Sword;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,7 +16,7 @@ public class ClericTest {
     @Before
     public void before(){
         player1 = new Cleric( "Sid", 20,  20, 15, 20);
-        rod = new Rod( 5 , 2, 20);
+        rod = new Rod( 5 , 2, 20, 4);
         sword = new Sword(20,2);
     }
 

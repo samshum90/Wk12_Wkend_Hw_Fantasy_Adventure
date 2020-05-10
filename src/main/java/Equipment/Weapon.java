@@ -1,18 +1,14 @@
 package Equipment;
 
 import Item.ICarry;
-import Skills.IHeal;
 
-public class Rod implements IWeapon, IHeal, ICarry, IHealTool {
-
+public abstract class Weapon implements ICarry, IWeapon{
     private int damage;
     private int weight;
-    private int healAmount;
 
-    public Rod(int damage, int weight, int healAmount) {
+    public Weapon(int damage, int weight ) {
         this.damage = damage;
         this.weight = weight;
-        this.healAmount = healAmount;
     }
 
     public int getDamage() {
@@ -22,8 +18,5 @@ public class Rod implements IWeapon, IHeal, ICarry, IHealTool {
     public int getWeight() {
         return this.weight;
     }
-
-    public int heal() {
-        return this.healAmount;
-    }
 }
+

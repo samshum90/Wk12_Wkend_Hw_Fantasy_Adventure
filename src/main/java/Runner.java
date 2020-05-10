@@ -27,23 +27,23 @@ public class Runner {
             Player player = null;
             while (player == null) {
 
-                String classPrompt = String.format("Player %s, choose your class: Barbarian, Cleric, Dwarf, Knight, Necromancer, Warlock, Wizard", playerName);
+                String classPrompt = String.format("Player %s, choose your class: 1.Barbarian, 2.Cleric, 3.Dwarf, 4.Knight, 5.Necromancer, 6.Warlock, 7.Wizard", playerName);
                 System.out.println(classPrompt);
                 String playerClass = scanner.next();
 
-                if (playerClass.toLowerCase().equals("barbarian")) {
+                if (playerClass.toLowerCase().equals("barbarian") || playerClass.toLowerCase().equals("1")) {
                     player = quest.createBarbarian( playerName );
-                } else if (playerClass.toLowerCase().equals("dwarf")) {
+                } else if (playerClass.toLowerCase().equals("dwarf") || playerClass.toLowerCase().equals("2")) {
                     player = quest.createDwarf( playerName );
-                } else if (playerClass.toLowerCase().equals("knight")) {
+                } else if (playerClass.toLowerCase().equals("knight") || playerClass.toLowerCase().equals("3")) {
                     player = quest.createKnight( playerName );
-                } else if (playerClass.toLowerCase().equals("cleric")) {
+                } else if (playerClass.toLowerCase().equals("cleric") || playerClass.toLowerCase().equals("4")) {
                     player = quest.createCleric(playerName);
-                } else if (playerClass.toLowerCase().equals("wizard")) {
+                } else if (playerClass.toLowerCase().equals("wizard") || playerClass.toLowerCase().equals("7")) {
                     player = quest.createWizard(playerName);
-                } else if (playerClass.toLowerCase().equals("warlock")) {
+                } else if (playerClass.toLowerCase().equals("warlock") || playerClass.toLowerCase().equals("6")) {
                     player = quest.createWarlock(playerName);
-                } else if (playerClass.toLowerCase().equals("necromancer")) {
+                } else if (playerClass.toLowerCase().equals("necromancer") || playerClass.toLowerCase().equals("5")) {
                     player = quest.createNecromancer(playerName);
                 } else {
                     System.out.println("Input was not recognised please try again");
@@ -59,9 +59,9 @@ public class Runner {
 
         quest.prepareQuest(roomNumber);
 
-//        quest.startQuest();
+        quest.startQuest();
 
-
+        quest.conclusion(roomNumber);
 
     }
 }

@@ -2,14 +2,14 @@ package Item;
 
 import Skills.IHeal;
 
-public class HealingPotion implements IHeal, ICarry {
+public class HealingPotion implements ICarry {
 
     private int amount;
     private int weight;
 
-    public HealingPotion(int amount, int mpCost) {
+    public HealingPotion(int amount, int weight) {
         this.amount = amount;
-        this.weight = mpCost;
+        this.weight = weight;
     }
     public int heal() {
         return this.amount;

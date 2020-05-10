@@ -41,9 +41,9 @@ public class QuestTest {
         player6 =  new Necromancer( "Grom", 70, 10, 20, 20);
         player7 =  new Cleric( "Grom", 70, 10, 20, 20);
         staff = new Staff( 5, 4);
-        owl = new Owl( 5, 5 );
-        fireBall = new FireBall( 20, 2);
-        blizzard = new Blizzard( 10, 2);
+        owl = new Owl( "Owl", 5, 5 );
+        fireBall = new FireBall( 20, 2, "Single");
+        blizzard = new Blizzard( 10, 2, "All");
         room = new Room( 1, 50 );
         club = new Club( 10, 2);
         orc =  new Orc( "Orc",30, 30, 10, club);
@@ -128,7 +128,7 @@ public class QuestTest {
         quest.addPlayer(player5);
         quest.addPlayer(player6);
         quest.addPlayer(player7);
-        quest.partyOptions();
+        quest.partyOptions(room);
         assertEquals(7, quest.getPartyCount());
     }
 

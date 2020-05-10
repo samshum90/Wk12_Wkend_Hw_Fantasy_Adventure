@@ -24,18 +24,20 @@ public class RoomTest {
     Blizzard blizzard;
     Club club;
     Skeleton skeleton;
+    Party party;
 
     @Before
     public void before(){
         player1 = new Wizard( "Holdolf the Hazy", 40, 40, 15, 20);
         staff = new Staff( 5, 4);
-        owl = new Owl( 5, 5 );
-        fireBall = new FireBall( 20, 2);
-        blizzard = new Blizzard( 10, 2);
+        owl = new Owl( "Owl", 5, 5 );
+        fireBall = new FireBall( 20, 2, "Single");
+        blizzard = new Blizzard( 10, 2, "All");
         room = new Room( 1, 50 );
         club = new Club( 10, 2);
         orc =  new Orc( "Orc",30, 30, 10, club);
         skeleton = new Skeleton( "skeleton", 5, 5, 5);
+        party = new Party();
     }
 
     @Test
@@ -91,8 +93,24 @@ public class RoomTest {
     @Test
     public void canGenerateEnemyinfo(){
         room.generateEasyEnemy( 1 );
-        room.enemyInfo(room);
+        room.enemyInfo();
         assertEquals( 6, room.getEnemiesCount());
     }
 
+    @Test
+    public void canGetEnemyByIndex(){
+        room.addEnemy(orc);
+        room.addEnemy(skeleton);
+        assertEquals( skeleton, room.getEnemyByIndex(1));
+    }
+
+    @Test
+    public void kickDeadEnemies(){
+        room.addEnemy(orc);
+        orc.takeDamage(35);
+        room.addEnemy(skeleton);
+        room.enemyHpCheck(party);
+        assertEquals( 1, room.getEnemiesCount());
+        assertEquals( 10, party.getTreasure());
+    }
 }

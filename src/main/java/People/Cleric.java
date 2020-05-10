@@ -1,10 +1,7 @@
 package People;
 
 import Equipment.IHealTool;
-import Equipment.Rod;
 import Item.ICarry;
-import Skills.ICast;
-import Skills.IHeal;
 
 public class Cleric extends Player{
 

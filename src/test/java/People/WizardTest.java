@@ -25,9 +25,9 @@ public class WizardTest {
     public void before(){
         player1 = new Wizard( "Holdolf the Hazy", 40, 40, 15, 20);
         staff = new Staff( 22, 4);
-        owl = new Owl( 5, 5 );
-        fireBall = new FireBall( 20, 2);
-        blizzard = new Blizzard( 10, 2);
+        owl = new Owl( "Owl",5, 5 );
+        fireBall = new FireBall( 20, 2, "Single");
+        blizzard = new Blizzard( 10, 2, "All");
     }
 
     @Test

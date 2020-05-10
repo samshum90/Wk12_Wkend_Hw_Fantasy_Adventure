@@ -23,9 +23,9 @@ public class WarlockTest {
     public void before(){
         player1 = new Warlock( "Mehthesto", 40, 40, 15, 20);
         wand = new Wand( 5 , 2);
-        golem = new Golem( 5, 5 );
-        fireBall = new FireBall( 20, 2);
-        blizzard = new Blizzard( 10, 2);
+        golem = new Golem( "Golem", 5, 5 );
+        fireBall = new FireBall( 20, 2, "Single");
+        blizzard = new Blizzard( 10, 2, "All");
     }
 
     @Test
