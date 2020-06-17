@@ -1,9 +1,5 @@
 package Enemy;
 
-import Item.ICarry;
-
-import java.util.ArrayList;
-
 public abstract class Enemy{
 
     private String type;

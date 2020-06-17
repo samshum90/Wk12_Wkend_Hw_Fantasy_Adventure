@@ -13,6 +13,7 @@ public abstract class Creature {
     }
 
     public String getType(){ return this.type; }
+
     public int getDamage() {
         return damage;
     }
