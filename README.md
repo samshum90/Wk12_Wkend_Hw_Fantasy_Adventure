@@ -12,4 +12,4 @@ Weekend homework built with Java, the task is to model a fantasy adventure game 
 * Increasing difficulty
 
 ## Project setup
-Locate and run the runner file using your favorite IDE
+Locate and run the runner file using your favorite Java IDE
